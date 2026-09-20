@@ -1,0 +1,6 @@
+# Corpus ingestion only: src/extract_pdfs.py and src/extract_webpages.py.
+# Deliberately kept out of requirements.txt so the deployed app does not install
+# a PDF engine and an HTML parser it never calls at runtime.
+-r requirements.txt
+pymupdf==1.28.2
+beautifulsoup4==4.15.0

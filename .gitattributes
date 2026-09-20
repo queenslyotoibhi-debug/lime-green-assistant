@@ -1,0 +1,15 @@
+# The retrieval layer verifies chunks.jsonl byte-for-byte against the SHA-256 in
+# data/embeddings/embedding_manifest.json. Git must not normalise line endings in
+# the corpus or the index: this repo is authored on Windows (CRLF) and deployed on
+# Linux, and a normalised checkout hashes differently, which the integrity check
+# correctly rejects as a stale index. Keeping these byte-exact is what lets the
+# same index serve both platforms.
+*.jsonl -text
+*.npy -text binary
+
+# Source and docs may normalise as usual.
+*.py text
+*.md text
+*.toml text
+*.txt text
+*.csv text

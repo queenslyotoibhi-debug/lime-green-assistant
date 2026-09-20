@@ -1,0 +1,13 @@
+# Secrets — never commit a real key. Streamlit Cloud holds the deployed copy.
+.streamlit/secrets.toml
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Build inputs not required at runtime (see README §14)
+data/raw/
+data/processed/

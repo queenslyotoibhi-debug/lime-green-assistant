@@ -1,0 +1,10 @@
+{
+  "embedding_model": "gemini-embedding-001",
+  "embedding_dimensions": 3072,
+  "chunk_count": 219,
+  "source_chunks_file": "data/structured/chunks.jsonl",
+  "retrieval_enabled_only": true,
+  "embedding_task_type": "RETRIEVAL_DOCUMENT",
+  "batch_size": 16,
+  "chunks_jsonl_sha256": "c020c9e4b703278af26b37cb9f1ad9414be12cbb897473ac4331315f53848a7c"
+}

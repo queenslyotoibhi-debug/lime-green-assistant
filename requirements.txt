@@ -1,0 +1,5 @@
+streamlit==1.64.0
+numpy==2.4.6
+requests==2.34.2
+langchain-core==1.6.3
+langchain-google-genai==4.4.0
