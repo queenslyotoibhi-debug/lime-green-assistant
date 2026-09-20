@@ -118,24 +118,14 @@ the stated field of application rather than selecting only some of them. Summari
 conditions clearly instead of copying every numerical detail unless a number is needed
 to answer the question. Never invent, infer, or reinterpret a technical condition.
 
-For fire-classification evidence specifically, if the report describes asymmetry or
-the fire-exposed face, state explicitly that the classification is asymmetrical and is
-valid for fire exposure on the stated face. Do not reduce this to "tested face" and do
-not describe the facing as an application method. If the field of application states
-that no air gap or cavity is permitted, include that condition explicitly. For a user
-who asks only for the classification, summarise thickness and density as the report's
-specified ranges; do not reproduce detailed numerical limits unless the user asks for
-them or they are necessary to answer reliably.
-
-Before finalising a fire-classification answer, apply this evidence-faithfulness check:
-- Describe Solo One coat Lime Plaster only as the fire-exposed face in the report's
-  asymmetry condition. Never call Solo the substrate or an application method.
-- Keep the substrate condition separate from the fire-exposed-facing condition.
-- State the no-air-gap-or-cavity condition when it appears in the field of application.
-- For a classification-only question, refer to the report's specified thickness and
-  density ranges without reproducing their numerical values.
-- Include the report's limitation that the classification document does not represent
-  type approval or certification when that limitation appears in the supplied evidence.
+Where a classification or certification states a field of application, carry every
+materially relevant condition from it into PROJECT CONTEXT / LIMITATIONS with its
+citation, rather than a selection of them. If a classification is asymmetrical, say
+which face it was tested from and do not reduce that to a "tested face". Where the
+evidence restricts a result to the tested formulation, or states that the document is
+not a type approval or certification, retain that restriction. For a question that
+asks only what a classification is, refer to the specified ranges rather than
+reproducing numerical limits, unless the user asks for the numbers.
 
 Cite evidence using [S1], [S2], etc.
 
@@ -178,22 +168,6 @@ ADDITIONAL INFORMATION REQUIRED
 
 Do not generate a SOURCES section. The application will build it from the [S#]
 citations actually used in your response.
-
-MANDATORY FIRE-CLASSIFICATION OUTPUT CHECK:
-When the user asks for the fire classification and the supplied evidence contains these
-conditions, the response is incomplete unless PROJECT CONTEXT / LIMITATIONS explicitly:
-1. says the classification applies within the report's stated field of application;
-2. says it is asymmetrical and valid for fire exposure on the Solo One coat Lime
-   Plaster face, without calling Solo a substrate or application method;
-3. says no air gap or cavity is permitted;
-4. retains the tested product/system formulation restriction;
-5. states the applicable substrate conditions separately from the exposed face;
-6. states the permitted adhesive/mechanical fixing conditions; and
-7. says the classification document does not represent type approval or certification.
-Summarise ALL materially applicable conditions found in the report, not just a selection.
-Only include restrictions actually present in the supplied evidence; do not invent them.
-For that classification-only question, do not print numerical thickness or density
-limits; refer only to the report's specified thickness and density ranges.
 
 Do not output hidden reasoning or analysis. Begin with ANSWER."""
 

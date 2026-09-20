@@ -42,7 +42,6 @@ MANIFEST_FILE = (
     / "embedding_manifest.json"
 )
 
-EXPECTED_CHUNK_COUNT = 219
 BATCH_SIZE = 16
 
 
@@ -175,7 +174,7 @@ def validate_outputs(expected_chunks, expected_hash):
     ]
 
     if saved_vectors.shape != (
-        EXPECTED_CHUNK_COUNT,
+        len(expected_chunks),
         EMBEDDING_DIMENSIONS
     ):
         raise ValueError(
@@ -242,10 +241,9 @@ def validate_outputs(expected_chunks, expected_hash):
 def main():
     retrieval_chunks = load_retrieval_chunks()
 
-    if len(retrieval_chunks) != EXPECTED_CHUNK_COUNT:
+    if not retrieval_chunks:
         raise ValueError(
-            "Expected 219 retrieval-enabled chunks, "
-            f"found {len(retrieval_chunks)}. "
+            "No retrieval-enabled chunks found in chunks.jsonl. "
             "Embedding build stopped."
         )
 
@@ -294,7 +292,7 @@ def main():
     )
 
     expected_shape = (
-        EXPECTED_CHUNK_COUNT,
+        len(retrieval_chunks),
         EMBEDDING_DIMENSIONS
     )
 

@@ -17,7 +17,13 @@ INDEX_FILE = (
     / "embedding_index.jsonl"
 )
 
-EXPECTED_RECORD_COUNT = 219
+MANIFEST_FILE = (
+    PROJECT_ROOT
+    / "data"
+    / "embeddings"
+    / "embedding_manifest.json"
+)
+
 K1 = 1.5
 B = 0.75
 
@@ -42,9 +48,21 @@ def load_chunks():
             if line.strip()
         ]
 
-    if len(chunks) != EXPECTED_RECORD_COUNT:
+    # The manifest is written by the embedding build, so it is the authority on how
+    # many records this index should hold. Comparing against it keeps the lexical and
+    # semantic halves in step after a corpus rebuild, which a literal count did not.
+    with MANIFEST_FILE.open("r", encoding="utf-8") as file:
+        expected_record_count = json.load(file).get("chunk_count")
+
+    if not isinstance(expected_record_count, int) or expected_record_count < 1:
         raise ValueError(
-            f"Expected {EXPECTED_RECORD_COUNT} BM25 index records, "
+            "The embedding manifest does not record a usable chunk_count."
+        )
+
+    if len(chunks) != expected_record_count:
+        raise ValueError(
+            f"Expected {expected_record_count} BM25 index records "
+            "(per the embedding manifest), "
             f"found {len(chunks)}."
         )
 
